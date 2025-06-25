@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="check_java">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/_utils/coding_style/check_java.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

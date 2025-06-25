@@ -1,0 +1,66 @@
+JAVAC = javac
+JAVA = java
+SRC_DIR = .
+
+.PHONY: build run clean
+
+# Define Java source files
+p1_SRC = $(SRC_DIR)/Feribot.java
+p2_SRC = $(SRC_DIR)/Stocks.java
+p3_SRC = $(SRC_DIR)/Nostory.java
+p4_SRC = $(SRC_DIR)/Walsh.java
+p5_SRC = $(SRC_DIR)/Badgpt.java
+p6_SRC = $(SRC_DIR)/Prinel.java
+p7_SRC = $(SRC_DIR)/Crypto.java
+p8_SRC = $(SRC_DIR)/Regele.java
+
+PROGS = p1 p2 p3 p4 p5 p6 p7 p8
+
+build: $(PROGS)
+
+# Run targets
+run-p1:
+	$(JAVA) -cp $(SRC_DIR) Feribot
+
+run-p2:
+	$(JAVA) -cp $(SRC_DIR) Stocks
+
+run-p3:
+	$(JAVA) -cp $(SRC_DIR) Nostory
+
+run-p4:
+	$(JAVA) -cp $(SRC_DIR) Walsh
+
+run-p5:
+	$(JAVA) -cp $(SRC_DIR) Badgpt
+
+run-p6:
+	$(JAVA) -cp $(SRC_DIR) Prinel
+
+run-p7:
+	$(JAVA) -cp $(SRC_DIR) Crypto
+
+run-p8:
+	$(JAVA) -cp $(SRC_DIR) Regele
+
+# Compilation rules
+p1: $(p1_SRC)
+	$(JAVAC) $<
+p2: $(p2_SRC)
+	$(JAVAC) $<
+p3: $(p3_SRC)
+	$(JAVAC) $<
+p4: $(p4_SRC)
+	$(JAVAC) $<
+p5: $(p5_SRC)
+	$(JAVAC) $<
+p6: $(p6_SRC)
+	$(JAVAC) $<
+p7: $(p7_SRC)
+	$(JAVAC) $<
+p8: $(p8_SRC)
+	$(JAVAC) $<
+
+# Clean compiled class files
+clean:
+	rm -f $(SRC_DIR)/*.class

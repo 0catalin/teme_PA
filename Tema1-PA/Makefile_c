@@ -1,0 +1,58 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -lm
+SRC_DIR = .
+
+.PHONY: build clean
+
+# Define source files
+p1_SRC = $(SRC_DIR)/feribot.c
+p2_SRC = $(SRC_DIR)/stocks.c
+p3_SRC = $(SRC_DIR)/nostory.c
+p4_SRC = $(SRC_DIR)/walsh.c
+p5_SRC = $(SRC_DIR)/badgpt.c
+p6_SRC = $(SRC_DIR)/prinel.c
+p7_SRC = $(SRC_DIR)/crypto.c
+p8_SRC = $(SRC_DIR)/regele.c
+
+# Build all targets
+build: p1 p2 p3 p4 p5 p6 p7 p8
+
+# Run targets
+run-p1:
+	./p1
+run-p2:
+	./p2
+run-p3:
+	./p3
+run-p4:
+	./p4
+run-p5:
+	./p5
+run-p6:
+	./p6
+run-p7:
+	./p7
+run-p8:
+	./p8
+
+# Compilation targets
+p1: $(p1_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+p2: $(p2_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+p3: $(p3_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+p4: $(p4_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+p5: $(p5_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+p6: $(p6_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+p7: $(p7_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+p8: $(p8_SRC)
+	$(CC) $(CFLAGS) $< -o $@
+
+# Clean compiled binaries
+clean:
+	rm -f p1 p2 p3 p4 p5 p6 p7 p8

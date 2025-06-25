@@ -1,0 +1,51 @@
+CC = g++
+CCFLAGS = -Wall -Wextra -std=c++17 -lm
+SRC_DIR = .
+
+# Define source files
+p1_SRC = $(SRC_DIR)/feribot.cpp
+p2_SRC = $(SRC_DIR)/stocks.cpp
+p3_SRC = $(SRC_DIR)/nostory.cpp
+p4_SRC = $(SRC_DIR)/walsh.cpp
+p5_SRC = $(SRC_DIR)/badgpt.cpp
+p6_SRC = $(SRC_DIR)/prinel.cpp
+p7_SRC = $(SRC_DIR)/crypto.cpp
+p8_SRC = $(SRC_DIR)/regele.cpp
+
+PROGS = p1 p2 p3 p4 p5 p6 p7 p8
+
+.PHONY: build clean
+
+build: $(PROGS)
+
+# Run targets
+run-%: %
+	./$<
+
+# Compilation rules using the variables
+p1: $(p1_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+p2: $(p2_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+p3: $(p3_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+p4: $(p4_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+p5: $(p5_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+p6: $(p6_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+p7: $(p7_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+p8: $(p8_SRC)
+	$(CC) $(CCFLAGS) $< -o $@
+
+clean:
+	rm -f $(PROGS)
